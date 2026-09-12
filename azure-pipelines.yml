@@ -17,3 +17,9 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: AzureStaticWebApp@0
+  inputs:
+    app_location: '/'          # folder with your source code (root of repo, or e.g. '/src')
+    api_location: ''           # leave empty if you have no Azure Functions API
+    output_location: ''        # folder with your build output, relative to app_location
+    azure_static_web_apps_api_token: '$(deployment_token)'
